@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>New/Update Contact</h1>
+
+    <form medthod="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Save</button>
+    </form>
+
+        {% if contact %}
+            <a href="{% url 'delete_contact' contact.id %}">Delete</a>
+        {% endif %}
+</body>
+</html>
